@@ -154,6 +154,11 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
   .proof li{padding-inline:12px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+.langs{display:inline-flex;border:1px solid currentColor;border-radius:999px;padding:2px;gap:2px}
+.langs button{background:none;border:0;color:inherit;font:600 13px var(--body);padding:5px 11px;border-radius:999px;cursor:pointer;opacity:.75}
+.langs button[aria-pressed="true"]{background:var(--on-green);color:var(--green);opacity:1}
+.hright{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -163,7 +168,13 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
 
 <header><div class="wrap">
   <a class="logo" href="#top"><b>Dr. Mans</b><span>стоматология</span></a>
-  <a class="hphone" href="tel:+79776552866">+7 (977) 655-28-66</a>
+  <div class="hright">
+    <a class="hphone" href="tel:+79776552866">+7 (977) 655-28-66</a>
+    <div class="langs" role="group" aria-label="Язык / Til">
+      <button type="button" id="l-ru" data-l="ru" aria-pressed="true">RU</button>
+      <button type="button" id="l-uz" data-l="uz" aria-pressed="false">UZ</button>
+    </div>
+  </div>
 </div></header>
 
 <div class="hero" id="top"><div class="wrap">
@@ -290,6 +301,32 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
   <span>© Dr. Mans, 2026. Лицензия № <span class="todo" style="color:inherit;text-decoration:underline dotted">[номер]</span></span>
   <span>Имеются противопоказания, необходима консультация специалиста. *По данным Яндекс Карт.</span>
 </div></footer>
+
+<script>
+(function(){
+var T={"Черновик сайта.": "Sayt qoralamasi.", "Оранжевым": "To'q sariq rangda", "отмечено то, что клиника должна заполнить.": "klinika to'ldirishi kerak bo'lgan joylar belgilangan.", "стоматология": "stomatologiya", "Москва, 6 минут пешком от м. Пролетарская": "Moskva, Пролетарская metrosidan piyoda 6 daqiqa", "Красивая улыбка без спешки и лишних трат": "Shoshilmasdan va ortiqcha xarajatsiz go'zal tabassum", "Имплантация, брекеты, коронки и лечение зубов. Врач составляет план лечения с ценой до начала работы, а оплатить можно в рассрочку 0%.": "Implantatsiya, breketlar, koronkalar va tishlarni davolash. Shifokor ish boshlanishidan oldin narxi ko'rsatilgan davolash rejasini tuzadi, to'lovni esa 0% rassrochka bilan qilish mumkin.", "Записаться в WhatsApp": "WhatsApp orqali yozilish", "Написать в Telegram": "Telegram'da yozish", "174 оценки": "174 ta baho", "на Яндекс Картах": "Yandex Kartalarda", "рейтинг на Яндекс Картах": "Yandex Kartalardagi reyting", "отзывов пациентов": "bemorlar sharhi", "хвалят качество лечения*": "davolash sifatini maqtashgan*", "награда «Хорошее место»": "«Хорошее место» mukofoti", "Что мы лечим": "Nimalarni davolaymiz", "Полный цикл в одной клинике: от одного зуба до восстановления всей улыбки.": "Barcha xizmatlar bitta klinikada: bitta tishdan tortib butun tabassumni tiklashgacha.", "Имплантация": "Implantatsiya", "Восстановление утраченных зубов на имплантах.": "Yo'qotilgan tishlarni implant yordamida tiklash.", "Ортодонтия": "Ortodontiya", "Брекеты и исправление прикуса.": "Breketlar va prikusni to'g'rilash.", "Ортопедия": "Ortopediya", "Коронки, виниры и протезы.": "Koronkalar, vinirlar va protezlar.", "Терапия": "Terapiya", "Лечение кариеса и каналов, профессиональная гигиена.": "Karies va tish kanallarini davolash, professional gigiyena.", "Рассрочка 0%": "Rassrochka 0%", "Начните лечение сейчас и платите частями без переплаты. Условия:": "Davolanishni hozir boshlang, to'lovni esa ortiqcha haqsiz bo'lib-bo'lib to'lang. Shartlari:", "[банк-партнёр, срок, сумма]": "[hamkor bank, muddat, summa]", "Узнать условия": "Shartlarni bilish", "Клиника": "Klinika", "Уютный кабинет на 1-й Дубровской: современное оборудование и спокойная обстановка.": "1-я Дубровская ko'chasidagi shinam kabinet: zamonaviy uskunalar va xotirjam muhit.", "Вход с улицы, 1-я Дубровская, 1А": "Ko'chadan kirish, 1-я Дубровская, 1А", "Лечебный кабинет": "Davolash kabineti", "Лечим с увеличительной оптикой": "Kattalashtiruvchi optika bilan davolaymiz", "Ваш врач": "Sizning shifokoringiz", "Мансурхон": "Mansurxon", "[фамилия]": "[familiya]", "Главный врач клиники. Имплантация, ортопедия, ортодонтия, терапия. Стаж": "Klinikaning bosh shifokori. Implantatsiya, ortopediya, ortodontiya, terapiya. Ish staji", "[лет]": "[yil]", "Рассказывает о здоровье зубов в своём блоге: брекеты, гигиена, импланты.": "Blogida tish salomatligi haqida gapirib beradi: breketlar, gigiyena, implantlar.", "Цены": "Narxlar", "Точная стоимость фиксируется в плане лечения после осмотра.": "Aniq narx ko'rikdan so'ng davolash rejasida belgilanadi.", "Консультация": "Konsultatsiya", "[цена]": "[narx]", "Имплант под ключ": "Implant (koronkasi bilan)", "от [цена] ₽": "[narx] ₽ dan", "Брекет-система": "Breket tizimi", "Коронка": "Koronka", "Лечение кариеса": "Kariesni davolash", "Профессиональная гигиена": "Professional gigiyena", "Как добраться": "Qanday yetib borish mumkin", "м. Пролетарская": "Пролетарская metrosi", "480 м": "480 m", "м. Крестьянская Застава": "Крестьянская Застава metrosi", "660 м": "660 m", "остановка «1-я Дубровская»": "«1-я Дубровская» bekati", "63 м": "63 m", "Выйдите из метро Пролетарская через выход 1.": "Пролетарская metrosidan 1-chiqish orqali chiqing.", "Идите вперёд вдоль проспекта, мимо аптеки «Ригла».": "Prospekt bo'ylab «Ригла» dorixonasi yonidan to'g'ri yuring.", "Перейдите дорогу у 1-й Дубровской улицы.": "1-я Дубровская ko'chasi yonida yo'lni kesib o'ting.", "Через несколько шагов увидите зелёную вывеску «Стоматология Dr. Mans».": "Bir necha qadamdan so'ng «Стоматология Dr. Mans» yashil peshlavhasini ko'rasiz.", "Адрес": "Manzil", "Москва, 1-я Дубровская ул., 1А": "Moskva, 1-я Дубровская ул., 1А", "Телефон": "Telefon", "Запись в WhatsApp, Telegram и MAX": "WhatsApp, Telegram va MAX orqali yozilish", "Часы работы": "Ish vaqti", "Ежедневно, 9:00–20:00": "Har kuni, 9:00–20:00", "Открыть маршрут": "Yo'nalishni ochish", "Записаться": "Yozilish", "© Dr. Mans, 2026. Лицензия №": "© Dr. Mans, 2026. Litsenziya №", "[номер]": "[raqam]", "Имеются противопоказания, необходима консультация специалиста. *По данным Яндекс Карт.": "Qarshi ko'rsatmalar mavjud, mutaxassis maslahati zarur. *Yandex Kartalar ma'lumotlariga ko'ra.", "Ресепшн клиники Dr. Mans с зелёными стенами и мраморной стойкой": "Dr. Mans klinikasining yashil devorli va marmar peshtaxtali qabulxonasi", "Модель зуба с имплантом на мраморной стойке клиники": "Klinika peshtaxtasidagi implantli tish modeli", "Вход в стоматологию Dr. Mans с зелёной вывеской": "Yashil peshlavhali Dr. Mans stomatologiyasiga kirish", "Стоматологический светильник и монитор в кабинете": "Kabinetdagi stomatologik chiroq va monitor", "Врач лечит зубы с увеличительной оптикой": "Shifokor kattalashtiruvchi optika bilan tish davolamoqda", "Доктор Мансурхон, стоматолог клиники Dr. Mans": "Doktor Mansurxon, Dr. Mans klinikasi stomatologi"};
+var nodes=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+  var p=n.parentNode&&n.parentNode.nodeName;
+  if(p==='SCRIPT'||p==='STYLE')return NodeFilter.FILTER_REJECT;
+  return T[n.nodeValue.replace(/\s+/g,' ').trim()]?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP;}});
+while(w.nextNode()){var n=w.currentNode,k=n.nodeValue.replace(/\s+/g,' ').trim();
+  nodes.push({n:n,ru:n.nodeValue,uz:n.nodeValue.replace(/\S[\s\S]*\S|\S/,T[k])});}
+var imgs=[].slice.call(document.querySelectorAll('img[alt]')).filter(function(i){return T[i.alt]}).map(function(i){return{i:i,ru:i.alt,uz:T[i.alt]}});
+function set(l){
+  nodes.forEach(function(x){x.n.nodeValue=x[l]});
+  imgs.forEach(function(x){x.i.alt=x[l]});
+  document.documentElement.lang=l;
+  document.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l?'true':'false')});
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+document.querySelectorAll('.langs button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+var start='ru';
+try{start=localStorage.getItem('lang')||start}catch(e){}
+if(location.hash==='#uz')start='uz';
+if(location.hash==='#ru')start='ru';
+if(start!=='ru')set(start);
+})();
+</script>
 
 </body>
 </html>
