@@ -21,7 +21,6 @@
   --bg:#0F1613; --paper:#16201C; --ink:#E7EEE9; --muted:#9CB0A6; --line:#26332D;
   --green:#173A30; --green-2:#6FB8A8; --on-green:#EAF2EE; --oak:#D2A577; --marble:#1A1E1C; --todo:#F09A62; color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -108,8 +107,6 @@ section{padding-block:80px}
 .av{width:168px;height:168px;border-radius:50%;object-fit:cover;border:4px solid var(--bg);box-shadow:0 0 0 1px var(--line)}
 .doc h3{font-size:30px}
 .doc p{margin:6px 0 0;color:var(--muted)}
-.socials{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:14px}
-.socials a{color:var(--green-2);text-underline-offset:3px}
 
 /* prices */
 .prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;margin-top:32px}
@@ -159,10 +156,21 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
 .langs button{background:none;border:0;color:inherit;font:600 13px var(--body);padding:5px 11px;border-radius:999px;cursor:pointer;opacity:.75}
 .langs button[aria-pressed="true"]{background:var(--on-green);color:var(--green);opacity:1}
 .hright{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.legal{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:32px}
+.legal dl{margin:0;display:grid;gap:14px}
+.legal dt{font-size:13px;color:var(--muted)}
+.legal dd{margin:2px 0 0;font-size:16px}
+.legal h3{font-size:26px;margin-bottom:10px}
+.legal h3+ul{margin-bottom:28px}
+.doclist{list-style:none;margin:0;padding:0}
+.doclist li{padding-block:10px;border-top:1px solid var(--line)}
+.doclist a{color:var(--green-2);text-underline-offset:3px}
+.flinks{display:flex;gap:16px;flex-wrap:wrap}
+.flinks a{text-underline-offset:3px}
+@media (max-width:880px){.legal{grid-template-columns:1fr;gap:36px}}
 </style>
 </head>
 <body>
-
 
 <div class="draft"><div class="wrap">Черновик сайта. <span class="todo">Оранжевым</span> отмечено то, что клиника должна заполнить.</div></div>
 
@@ -183,10 +191,9 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
     <h1>Красивая улыбка без спешки и лишних трат</h1>
     <p class="sub">Имплантация, брекеты, коронки и лечение зубов. Врач составляет план лечения с ценой до начала работы, а оплатить можно в рассрочку 0%.</p>
     <div class="btns">
-      <a class="btn btn-light" href="https://wa.me/79663705050" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3Z"/></svg>
-        Записаться в WhatsApp</a>
-      <a class="btn btn-ghost" href="https://t.me/dr_mansurxon" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn btn-light" href="tel:+79776552866"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>Позвонить</a>
+      <a class="btn btn-ghost" href="https://wa.me/79663705050" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3Z"/></svg>WhatsApp</a>
+      <a class="btn btn-ghost" href="https://t.me/dr_mansurxon" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.4 13.1l-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 2.9c.9-.3 1.6.2 1.4 1.4Z"/></svg>Telegram</a>
     </div>
   </div>
   <figure>
@@ -224,7 +231,7 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
     <h2>Рассрочка 0%</h2>
     <p>Начните лечение сейчас и платите частями без переплаты. Условия: <span class="todo">[банк-партнёр, срок, сумма]</span>.</p>
   </div>
-  <a class="btn btn-light" href="https://wa.me/79663705050" target="_blank" rel="noopener">Узнать условия</a>
+  <a class="btn btn-light" href="tel:+79776552866">Узнать условия</a>
 </div></div>
 
 <section><div class="wrap">
@@ -244,11 +251,8 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
     <div>
       <h3>Мансурхон <span class="todo">[фамилия]</span></h3>
       <p>Главный врач клиники. Имплантация, ортопедия, ортодонтия, терапия. Стаж <span class="todo">[лет]</span>.</p>
-      <p>Рассказывает о здоровье зубов в своём блоге: брекеты, гигиена, импланты.</p>
-      <div class="socials">
-        <a href="https://instagram.com/mansurstom" target="_blank" rel="noopener">Instagram @mansurstom</a>
-        <a href="https://instagram.com/klinika_mans" target="_blank" rel="noopener">Instagram @klinika_mans</a>
-      </div>
+      <p>Образование: <span class="todo">[вуз, год окончания, специальность]</span></p>
+      <p>Аккредитация специалиста: <span class="todo">[номер, срок действия]</span></p>
     </div>
   </div>
 </div></section>
@@ -291,8 +295,43 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
       </dl>
       <div class="btns">
         <a class="btn btn-green" href="https://yandex.ru/maps/org/dr_mans/55016926861" target="_blank" rel="noopener">Открыть маршрут</a>
-        <a class="btn btn-ghost" href="https://wa.me/79663705050" target="_blank" rel="noopener">Записаться</a>
+        <a class="btn btn-ghost" href="tel:+79776552866">Записаться</a>
+        <a class="btn btn-ghost" href="https://t.me/dr_mansurxon" target="_blank" rel="noopener">Telegram</a>
       </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="svedeniya"><div class="wrap">
+  <h2>Сведения о клинике</h2>
+  <p class="lead">Информация, которую медицинская организация раскрывает пациентам.</p>
+  <div class="legal">
+    <dl>
+      <div><dt>Полное наименование</dt><dd class="todo">[ООО или ИП, как в выписке]</dd></div>
+      <div><dt>ОГРН / ОГРНИП</dt><dd class="todo">[номер]</dd></div>
+      <div><dt>ИНН</dt><dd class="todo">[номер]</dd></div>
+      <div><dt>Дата регистрации</dt><dd class="todo">[дата]</dd></div>
+      <div><dt>Юридический адрес</dt><dd class="todo">[адрес]</dd></div>
+      <div><dt>Место оказания услуг</dt><dd>Москва, 1-я Дубровская ул., 1А</dd></div>
+      <div><dt>Лицензия на медицинскую деятельность</dt><dd class="todo">[номер]</dd></div>
+      <div><dt>Дата выдачи лицензии</dt><dd class="todo">[дата]</dd></div>
+      <div><dt>Электронная почта</dt><dd class="todo">[email]</dd></div>
+    </dl>
+    <div>
+      <h3>Документы</h3>
+      <ul class="doclist">
+        <li><span class="todo">Выписка из реестра лицензий (PDF)</span></li>
+        <li><span class="todo">Выписка из ЕГРЮЛ / ЕГРИП (PDF)</span></li>
+        <li><span class="todo">Образец договора на платные медицинские услуги (PDF)</span></li>
+        <li><span class="todo">Правила внутреннего распорядка для пациентов (PDF)</span></li>
+        <li><a href="policy.html">Политика обработки персональных данных</a></li>
+      </ul>
+      <h3>Контролирующие органы</h3>
+      <ul class="doclist">
+        <li><a href="https://mosgorzdrav.ru" target="_blank" rel="noopener">Департамент здравоохранения города Москвы</a></li>
+        <li><a href="https://77reg.roszdravnadzor.gov.ru" target="_blank" rel="noopener">Территориальный орган Росздравнадзора по г. Москве и Московской области</a></li>
+        <li><a href="https://77.rospotrebnadzor.ru" target="_blank" rel="noopener">Управление Роспотребнадзора по г. Москве</a></li>
+      </ul>
     </div>
   </div>
 </div></section>
@@ -300,11 +339,12 @@ footer .wrap{padding-block:28px;display:flex;justify-content:space-between;gap:1
 <footer><div class="wrap">
   <span>© Dr. Mans, 2026. Лицензия № <span class="todo" style="color:inherit;text-decoration:underline dotted">[номер]</span></span>
   <span>Имеются противопоказания, необходима консультация специалиста. *По данным Яндекс Карт.</span>
+  <span class="flinks"><a href="#svedeniya">Сведения о клинике</a> <a href="policy.html">Политика конфиденциальности</a></span>
 </div></footer>
 
 <script>
 (function(){
-var T={"Черновик сайта.": "Sayt qoralamasi.", "Оранжевым": "To'q sariq rangda", "отмечено то, что клиника должна заполнить.": "klinika to'ldirishi kerak bo'lgan joylar belgilangan.", "стоматология": "stomatologiya", "Москва, 6 минут пешком от м. Пролетарская": "Moskva, Пролетарская metrosidan piyoda 6 daqiqa", "Красивая улыбка без спешки и лишних трат": "Shoshilmasdan va ortiqcha xarajatsiz go'zal tabassum", "Имплантация, брекеты, коронки и лечение зубов. Врач составляет план лечения с ценой до начала работы, а оплатить можно в рассрочку 0%.": "Implantatsiya, breketlar, koronkalar va tishlarni davolash. Shifokor ish boshlanishidan oldin narxi ko'rsatilgan davolash rejasini tuzadi, to'lovni esa 0% rassrochka bilan qilish mumkin.", "Записаться в WhatsApp": "WhatsApp orqali yozilish", "Написать в Telegram": "Telegram'da yozish", "174 оценки": "174 ta baho", "на Яндекс Картах": "Yandex Kartalarda", "рейтинг на Яндекс Картах": "Yandex Kartalardagi reyting", "отзывов пациентов": "bemorlar sharhi", "хвалят качество лечения*": "davolash sifatini maqtashgan*", "награда «Хорошее место»": "«Хорошее место» mukofoti", "Что мы лечим": "Nimalarni davolaymiz", "Полный цикл в одной клинике: от одного зуба до восстановления всей улыбки.": "Barcha xizmatlar bitta klinikada: bitta tishdan tortib butun tabassumni tiklashgacha.", "Имплантация": "Implantatsiya", "Восстановление утраченных зубов на имплантах.": "Yo'qotilgan tishlarni implant yordamida tiklash.", "Ортодонтия": "Ortodontiya", "Брекеты и исправление прикуса.": "Breketlar va prikusni to'g'rilash.", "Ортопедия": "Ortopediya", "Коронки, виниры и протезы.": "Koronkalar, vinirlar va protezlar.", "Терапия": "Terapiya", "Лечение кариеса и каналов, профессиональная гигиена.": "Karies va tish kanallarini davolash, professional gigiyena.", "Рассрочка 0%": "Rassrochka 0%", "Начните лечение сейчас и платите частями без переплаты. Условия:": "Davolanishni hozir boshlang, to'lovni esa ortiqcha haqsiz bo'lib-bo'lib to'lang. Shartlari:", "[банк-партнёр, срок, сумма]": "[hamkor bank, muddat, summa]", "Узнать условия": "Shartlarni bilish", "Клиника": "Klinika", "Уютный кабинет на 1-й Дубровской: современное оборудование и спокойная обстановка.": "1-я Дубровская ko'chasidagi shinam kabinet: zamonaviy uskunalar va xotirjam muhit.", "Вход с улицы, 1-я Дубровская, 1А": "Ko'chadan kirish, 1-я Дубровская, 1А", "Лечебный кабинет": "Davolash kabineti", "Лечим с увеличительной оптикой": "Kattalashtiruvchi optika bilan davolaymiz", "Ваш врач": "Sizning shifokoringiz", "Мансурхон": "Mansurxon", "[фамилия]": "[familiya]", "Главный врач клиники. Имплантация, ортопедия, ортодонтия, терапия. Стаж": "Klinikaning bosh shifokori. Implantatsiya, ortopediya, ortodontiya, terapiya. Ish staji", "[лет]": "[yil]", "Рассказывает о здоровье зубов в своём блоге: брекеты, гигиена, импланты.": "Blogida tish salomatligi haqida gapirib beradi: breketlar, gigiyena, implantlar.", "Цены": "Narxlar", "Точная стоимость фиксируется в плане лечения после осмотра.": "Aniq narx ko'rikdan so'ng davolash rejasida belgilanadi.", "Консультация": "Konsultatsiya", "[цена]": "[narx]", "Имплант под ключ": "Implant (koronkasi bilan)", "от [цена] ₽": "[narx] ₽ dan", "Брекет-система": "Breket tizimi", "Коронка": "Koronka", "Лечение кариеса": "Kariesni davolash", "Профессиональная гигиена": "Professional gigiyena", "Как добраться": "Qanday yetib borish mumkin", "м. Пролетарская": "Пролетарская metrosi", "480 м": "480 m", "м. Крестьянская Застава": "Крестьянская Застава metrosi", "660 м": "660 m", "остановка «1-я Дубровская»": "«1-я Дубровская» bekati", "63 м": "63 m", "Выйдите из метро Пролетарская через выход 1.": "Пролетарская metrosidan 1-chiqish orqali chiqing.", "Идите вперёд вдоль проспекта, мимо аптеки «Ригла».": "Prospekt bo'ylab «Ригла» dorixonasi yonidan to'g'ri yuring.", "Перейдите дорогу у 1-й Дубровской улицы.": "1-я Дубровская ko'chasi yonida yo'lni kesib o'ting.", "Через несколько шагов увидите зелёную вывеску «Стоматология Dr. Mans».": "Bir necha qadamdan so'ng «Стоматология Dr. Mans» yashil peshlavhasini ko'rasiz.", "Адрес": "Manzil", "Москва, 1-я Дубровская ул., 1А": "Moskva, 1-я Дубровская ул., 1А", "Телефон": "Telefon", "Запись в WhatsApp, Telegram и MAX": "WhatsApp, Telegram va MAX orqali yozilish", "Часы работы": "Ish vaqti", "Ежедневно, 9:00–20:00": "Har kuni, 9:00–20:00", "Открыть маршрут": "Yo'nalishni ochish", "Записаться": "Yozilish", "© Dr. Mans, 2026. Лицензия №": "© Dr. Mans, 2026. Litsenziya №", "[номер]": "[raqam]", "Имеются противопоказания, необходима консультация специалиста. *По данным Яндекс Карт.": "Qarshi ko'rsatmalar mavjud, mutaxassis maslahati zarur. *Yandex Kartalar ma'lumotlariga ko'ra.", "Ресепшн клиники Dr. Mans с зелёными стенами и мраморной стойкой": "Dr. Mans klinikasining yashil devorli va marmar peshtaxtali qabulxonasi", "Модель зуба с имплантом на мраморной стойке клиники": "Klinika peshtaxtasidagi implantli tish modeli", "Вход в стоматологию Dr. Mans с зелёной вывеской": "Yashil peshlavhali Dr. Mans stomatologiyasiga kirish", "Стоматологический светильник и монитор в кабинете": "Kabinetdagi stomatologik chiroq va monitor", "Врач лечит зубы с увеличительной оптикой": "Shifokor kattalashtiruvchi optika bilan tish davolamoqda", "Доктор Мансурхон, стоматолог клиники Dr. Mans": "Doktor Mansurxon, Dr. Mans klinikasi stomatologi"};
+var T={"Черновик сайта.": "Sayt qoralamasi.", "Оранжевым": "To'q sariq rangda", "отмечено то, что клиника должна заполнить.": "klinika to'ldirishi kerak bo'lgan joylar belgilangan.", "стоматология": "stomatologiya", "Москва, 6 минут пешком от м. Пролетарская": "Moskva, Пролетарская metrosidan piyoda 6 daqiqa", "Красивая улыбка без спешки и лишних трат": "Shoshilmasdan va ortiqcha xarajatsiz go'zal tabassum", "Имплантация, брекеты, коронки и лечение зубов. Врач составляет план лечения с ценой до начала работы, а оплатить можно в рассрочку 0%.": "Implantatsiya, breketlar, koronkalar va tishlarni davolash. Shifokor ish boshlanishidan oldin narxi ko'rsatilgan davolash rejasini tuzadi, to'lovni esa 0% rassrochka bilan qilish mumkin.", "174 оценки": "174 ta baho", "на Яндекс Картах": "Yandex Kartalarda", "рейтинг на Яндекс Картах": "Yandex Kartalardagi reyting", "отзывов пациентов": "bemorlar sharhi", "хвалят качество лечения*": "davolash sifatini maqtashgan*", "награда «Хорошее место»": "«Хорошее место» mukofoti", "Что мы лечим": "Nimalarni davolaymiz", "Полный цикл в одной клинике: от одного зуба до восстановления всей улыбки.": "Barcha xizmatlar bitta klinikada: bitta tishdan tortib butun tabassumni tiklashgacha.", "Имплантация": "Implantatsiya", "Восстановление утраченных зубов на имплантах.": "Yo'qotilgan tishlarni implant yordamida tiklash.", "Ортодонтия": "Ortodontiya", "Брекеты и исправление прикуса.": "Breketlar va prikusni to'g'rilash.", "Ортопедия": "Ortopediya", "Коронки, виниры и протезы.": "Koronkalar, vinirlar va protezlar.", "Терапия": "Terapiya", "Лечение кариеса и каналов, профессиональная гигиена.": "Karies va tish kanallarini davolash, professional gigiyena.", "Рассрочка 0%": "Rassrochka 0%", "Начните лечение сейчас и платите частями без переплаты. Условия:": "Davolanishni hozir boshlang, to'lovni esa ortiqcha haqsiz bo'lib-bo'lib to'lang. Shartlari:", "[банк-партнёр, срок, сумма]": "[hamkor bank, muddat, summa]", "Узнать условия": "Shartlarni bilish", "Клиника": "Klinika", "Уютный кабинет на 1-й Дубровской: современное оборудование и спокойная обстановка.": "1-я Дубровская ko'chasidagi shinam kabinet: zamonaviy uskunalar va xotirjam muhit.", "Вход с улицы, 1-я Дубровская, 1А": "Ko'chadan kirish, 1-я Дубровская, 1А", "Лечебный кабинет": "Davolash kabineti", "Лечим с увеличительной оптикой": "Kattalashtiruvchi optika bilan davolaymiz", "Ваш врач": "Sizning shifokoringiz", "Мансурхон": "Mansurxon", "[фамилия]": "[familiya]", "Главный врач клиники. Имплантация, ортопедия, ортодонтия, терапия. Стаж": "Klinikaning bosh shifokori. Implantatsiya, ortopediya, ortodontiya, terapiya. Ish staji", "[лет]": "[yil]", "Цены": "Narxlar", "Точная стоимость фиксируется в плане лечения после осмотра.": "Aniq narx ko'rikdan so'ng davolash rejasida belgilanadi.", "Консультация": "Konsultatsiya", "[цена]": "[narx]", "Имплант под ключ": "Implant (koronkasi bilan)", "от [цена] ₽": "[narx] ₽ dan", "Брекет-система": "Breket tizimi", "Коронка": "Koronka", "Лечение кариеса": "Kariesni davolash", "Профессиональная гигиена": "Professional gigiyena", "Как добраться": "Qanday yetib borish mumkin", "м. Пролетарская": "Пролетарская metrosi", "480 м": "480 m", "м. Крестьянская Застава": "Крестьянская Застава metrosi", "660 м": "660 m", "остановка «1-я Дубровская»": "«1-я Дубровская» bekati", "63 м": "63 m", "Выйдите из метро Пролетарская через выход 1.": "Пролетарская metrosidan 1-chiqish orqali chiqing.", "Идите вперёд вдоль проспекта, мимо аптеки «Ригла».": "Prospekt bo'ylab «Ригла» dorixonasi yonidan to'g'ri yuring.", "Перейдите дорогу у 1-й Дубровской улицы.": "1-я Дубровская ko'chasi yonida yo'lni kesib o'ting.", "Через несколько шагов увидите зелёную вывеску «Стоматология Dr. Mans».": "Bir necha qadamdan so'ng «Стоматология Dr. Mans» yashil peshlavhasini ko'rasiz.", "Адрес": "Manzil", "Москва, 1-я Дубровская ул., 1А": "Moskva, 1-я Дубровская ул., 1А", "Телефон": "Telefon", "Запись в WhatsApp, Telegram и MAX": "WhatsApp, Telegram va MAX orqali yozilish", "Часы работы": "Ish vaqti", "Ежедневно, 9:00–20:00": "Har kuni, 9:00–20:00", "Открыть маршрут": "Yo'nalishni ochish", "Записаться": "Yozilish", "© Dr. Mans, 2026. Лицензия №": "© Dr. Mans, 2026. Litsenziya №", "[номер]": "[raqam]", "Имеются противопоказания, необходима консультация специалиста. *По данным Яндекс Карт.": "Qarshi ko'rsatmalar mavjud, mutaxassis maslahati zarur. *Yandex Kartalar ma'lumotlariga ko'ra.", "Ресепшн клиники Dr. Mans с зелёными стенами и мраморной стойкой": "Dr. Mans klinikasining yashil devorli va marmar peshtaxtali qabulxonasi", "Модель зуба с имплантом на мраморной стойке клиники": "Klinika peshtaxtasidagi implantli tish modeli", "Вход в стоматологию Dr. Mans с зелёной вывеской": "Yashil peshlavhali Dr. Mans stomatologiyasiga kirish", "Стоматологический светильник и монитор в кабинете": "Kabinetdagi stomatologik chiroq va monitor", "Врач лечит зубы с увеличительной оптикой": "Shifokor kattalashtiruvchi optika bilan tish davolamoqda", "Доктор Мансурхон, стоматолог клиники Dr. Mans": "Doktor Mansurxon, Dr. Mans klinikasi stomatologi", "Позвонить": "Qo'ng'iroq qilish", "Образование:": "Ma'lumoti:", "[вуз, год окончания, специальность]": "[oliygoh, bitirgan yili, mutaxassislik]", "Аккредитация специалиста:": "Mutaxassis akkreditatsiyasi:", "[номер, срок действия]": "[raqam, amal qilish muddati]", "Сведения о клинике": "Klinika haqida ma'lumot", "Информация, которую медицинская организация раскрывает пациентам.": "Tibbiy tashkilot bemorlarga ochiq beradigan ma'lumotlar.", "Полное наименование": "To'liq nomi", "[ООО или ИП, как в выписке]": "[OOO yoki IP, ko'chirmadagidek]", "ОГРН / ОГРНИП": "OGRN / OGRNIP", "ИНН": "INN", "Дата регистрации": "Ro'yxatdan o'tgan sana", "[дата]": "[sana]", "Юридический адрес": "Yuridik manzil", "[адрес]": "[manzil]", "Место оказания услуг": "Xizmat ko'rsatiladigan joy", "Лицензия на медицинскую деятельность": "Tibbiy faoliyat litsenziyasi", "Дата выдачи лицензии": "Litsenziya berilgan sana", "Электронная почта": "Elektron pochta", "Документы": "Hujjatlar", "Выписка из реестра лицензий (PDF)": "Litsenziyalar reyestridan ko'chirma (PDF)", "Выписка из ЕГРЮЛ / ЕГРИП (PDF)": "EGRYuL / EGRIP ko'chirmasi (PDF)", "Образец договора на платные медицинские услуги (PDF)": "Pullik tibbiy xizmatlar shartnomasi namunasi (PDF)", "Правила внутреннего распорядка для пациентов (PDF)": "Bemorlar uchun ichki tartib qoidalari (PDF)", "Политика обработки персональных данных": "Shaxsiy ma'lumotlarni qayta ishlash siyosati", "Контролирующие органы": "Nazorat organlari", "Департамент здравоохранения города Москвы": "Moskva shahar sog'liqni saqlash departamenti", "Территориальный орган Росздравнадзора по г. Москве и Московской области": "Roszdravnadzorning Moskva va Moskva viloyati bo'yicha hududiy organi", "Управление Роспотребнадзора по г. Москве": "Rospotrebnadzorning Moskva bo'yicha boshqarmasi", "Политика конфиденциальности": "Maxfiylik siyosati"};
 var nodes=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
   var p=n.parentNode&&n.parentNode.nodeName;
   if(p==='SCRIPT'||p==='STYLE')return NodeFilter.FILTER_REJECT;
